@@ -92,7 +92,10 @@ def render_logout_response(config, user, session):
     return response
 
 def get_issue_instant(session):
-    # session.created is set using time.getTime().
-    # But IssueInstant is expected to be in UTC form of ISO-8601 format
-    issue_instant = datetime.datetime.fromtimestamp(session.created).replace(tzinfo=datetime.timezone.utc, microsecond=0).isoformat()
+    # Convert session.created to a datetime object and replace the timezone with UTC
+    created_datetime = datetime.datetime.fromtimestamp(session.created, tz=datetime.timezone.utc)
+    
+    # Format the datetime object as the specified string format
+    issue_instant = created_datetime.strftime('%Y-%m-%dT%H:%M:%SZ')
+    
     return issue_instant
