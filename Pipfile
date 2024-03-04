@@ -4,12 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-lxml = "*"
+lxml = "4.9.3"
 signxml = "*"
 Jinja2 = "*"
 Flask = "*"
 PyYAML = "*"
 Flask-Script = ">=2.0.5"
+xmlsec = "*"
 
 [dev-packages]
 nose = "*"

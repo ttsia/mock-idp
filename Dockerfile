@@ -5,7 +5,7 @@ RUN apk update && apk upgrade
 # remove after install
 RUN apk add gcc musl-dev openssl-dev libffi-dev \
   libxml2-dev libxslt-dev \
-  rust cargo
+  rust cargo build-base libressl libffi-dev libressl-dev libxslt-dev libxml2-dev xmlsec-dev xmlsec
 
 # Runtime dependencies
 RUN apk add libxslt
