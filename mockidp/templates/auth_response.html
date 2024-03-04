@@ -24,6 +24,7 @@
     <form method="POST" action="{{ post_url }}">
         <noscript><input type='submit' value='Submit'/></noscript>
         <input type="hidden" name="SAMLResponse" value="{{ saml_response }}">
+        <input type="hidden" name="RelayState" value="{{ relay_state }}"/>
     </form>
 </body>
 

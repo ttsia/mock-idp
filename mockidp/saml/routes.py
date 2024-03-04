@@ -64,7 +64,7 @@ def authenticate():
         saml_request = open_saml_requests[saml_req_id]
         session = get_session(user, saml_request)
         url, saml_response = create_auth_response(conf, session)
-        return flask.render_template('auth_response.html', post_url=url, saml_response=saml_response)
+        return flask.render_template('auth_response.html', post_url=url, saml_response=saml_response, relay_state="/")
     else:
         flask.flash(f"Incorrect username or password {username}")
         return flask.redirect("/saml/login", code=302)
